@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AYModel — Grupo Premium</title>
+  <meta name="description" content="AYModel — Grupo premium de modelos selecionadas para eventos e convites. Entre em contato via WhatsApp para informações." />
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.aymodel.com.br/">
+  <meta property="og:image" content="https://davipaulino2025.github.io/AY-MODEL/fotos/logo.jpeg" />
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="315">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17537954258"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17537954258');
+</script>
+
+ <style>
+    :root{
+      --bg:#060606;
+      --gold: linear-gradient(90deg,#d4af37,#f5d27a);
+      --accent:#f0c96b;
+      --glass: rgba(255,255,255,0.04);
+      --text:#f7f5f0;
+      --muted:#bfb6a3;
+      --container:1100px;
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:radial-gradient(1200px 600px at 10% 10%, rgba(245,210,120,0.03), transparent), var(--bg); color:var(--text); -webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--container); margin:0 auto; padding:36px}
+
+    header{display:flex;align-items:center;justify-content:space-between; gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:64px; width:64px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    .brand{font-weight:700; letter-spacing:1px}
+    .brand span{background:var(--gold); -webkit-background-clip:text; background-clip:text; color:transparent; font-size:20px}
+
+    nav{display:flex; gap:12px}
+    .btn{background:linear-gradient(90deg,#d4af37,#f3d27a); color:#060606; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:600}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:32px; align-items:center; margin:40px 0}
+    .hero-left{padding:24px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    h1{margin:0;font-size:36px;line-height:1.05}
+    p.lead{color:var(--muted); margin-top:12px}
+    .cta-row{display:flex; gap:12px; margin-top:18px}
+    .cta-whatsapp{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; background:#25d366; color:white; border-radius:12px; text-decoration:none; font-weight:700}
+    .cta-secondary{padding:12px 16px; border-radius:12px; background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--text); text-decoration:none}
+
+    /* card list */
+    .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:22px}
+    .card{background:var(--glass); padding:14px; border-radius:14px; overflow:hidden; display:flex; gap:12px; align-items:center}
+    .card img{width:92px; height:92px; border-radius:12px; object-fit:cover}
+    .card h4{margin:0}
+    .muted{color:var(--muted); font-size:13px}
+
+    /* gallery */
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:28px}
+    .gallery img{width:100%; height:220px; object-fit:cover; border-radius:12px}
+
+    footer{margin:60px 0 40px; text-align:center; color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .cards{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+    }
+
+    /* reveal on scroll */
+    .reveal{opacity:0; transform:translateY(18px); transition:all 700ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.visible{opacity:1; transform:none}
+
+    /* subtle wave background */
+    .waves{position:fixed; left:0; right:0; top:0; height:300px; pointer-events:none; z-index:0; opacity:0.12}
+
+    /* floating badge */
+    .floating-whatsapp{position:fixed; right:18px; bottom:18px; z-index:60}
+    .floating-whatsapp a{display:inline-flex; align-items:center; gap:10px; background:#25d366; color:white; padding:12px 14px; border-radius:999px; text-decoration:none; box-shadow:0 8px 30px rgba(0,0,0,0.4); font-weight:700}
+
+    /* subtle entrance for hero image */
+    .frame{border-radius:20px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,0.6)}
+
+     /* Container fixo no canto inferior esquerdo */
+  .instagram-fixed {
+    position: fixed;
+    bottom: 20px;        /* distância da borda inferior */
+    left: 20px;          /* distância da borda esquerda */
+    z-index: 9999;       /* fica acima de tudo */
+    animation: bounce 2.2s ease-in-out infinite;
+  }
+
+  /* Efeito bounce */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-8px);
+    }
+    60% {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* Estilo do botão */
+  .instagram-fixed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #feda75 0%, #f58529 30%, #dd2a7b 60%, #8134af 100%);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover (leve destaque ao passar o mouse) */
+  .instagram-fixed a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Ícone */
+  .instagram-fixed img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+  }
+
+  /* Responsivo para celulares */
+  @media (max-width: 480px) {
+    .instagram-fixed {
+      bottom: 15px;
+      left: 15px;
+    }
+    .instagram-fixed a {
+      width: 50px;
+      height: 50px;
+    }
+    .instagram-fixed img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+/* Seção da Galeria */
+#galeria {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #000000;
+}
+
+/* Título da Galeria */
+#galeria h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Container das imagens */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagens ajustadas para mostrar inteiras */
+.gallery img {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* controla altura máxima no desktop */
+  object-fit: contain; /* mostra a imagem toda sem cortar */
+  border-radius: 10px;
+  background-color: #1b1b1b; /* fundo neutro para imagens com transparência */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 5px; /* evita que encoste nas bordas */
+}
+
+/* Efeito de hover */
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .gallery img {
+    max-height: 250px; /* reduz no mobile */
+  }
+}
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Lado direito */
+  z-index: 1000;
+}
+
+.floating-whatsapp img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.floating-whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+/* Animação Bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- SVG animated waves -->
+  <svg class="waves" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1">
+        <stop offset="0%" stop-color="#d4af37" stop-opacity="0.14" />
+        <stop offset="100%" stop-color="#f3d27a" stop-opacity="0.04" />
+      </linearGradient>
+    </defs>
+    <path d="M0,200 C200,120 400,220 720,160 C1040,100 1240,180 1440,140 L1440 0 L0 0 Z" fill="url(#g1)">
+      <animate attributeName="d" dur="12s" repeatCount="indefinite" values="M0,200 C200,120 400,220 720,160 C1040,100 1240,180 1440,140 L1440 0 L0 0 Z; M0,180 C200,150 420,120 720,170 C1020,220 1240,120 1440,160 L1440 0 L0 0 Z; M0,200 C200,120 400,220 720,160 C1040,100 1240,180 1440,140 L1440 0 L0 0 Z" />
+    </path>
+  </svg>
+
+  <div class="wrap" style="position:relative;z-index:10">
+    <header>
+      <div class="logo">
+        <img src="fotos/logo.jpeg" alt="AYModel Logo" />
+        <div>
+          <div class="brand"><span>AY</span>Model</div>
+          <div class="muted">aymodel.com.br</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#sobre">Sobre</a>
+        <a class="btn" href="#galeria">Galeria</a>
+        <a class="btn" href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left reveal" id="sobre">
+          <h1>Modelos selecionadas para eventos & convites</h1>
+          <p class="lead">AYModel é uma plataforma exclusiva premium que conecta Homens de alto padrão a modelos selecionadas em todo o Brasil. Focamos em elegância, discrição e qualidade, oferecendo experiências únicas e conexões diferenciadas. Nosso grupo premium é acessível via WhatsApp, A adesão ao grupo é feita via WhatsApp mediante seleção criteriosa.</p>
+
+          <div class="cta-row">
+            <a class="cta-whatsapp" id="whatsappHero" href="https://wa.me/5515974067557?text=Ol%C3%A1%2C%20gostaria%20de%20participar%20do%20grupo%20premium" target="_blank">📲 Entrar no Grupo Premium</a>
+            <a class="cta-secondary" href="#galeria">Ver modelos</a>
+          </div>
+
+          <div class="cards">
+            <div class="card reveal">
+              <img src="fotos/imagem_12.jpg" alt="Modelo 1" />
+              <div>
+                <h4>Perfis selecionados</h4>
+                <div class="muted">Aderência a critérios profissionais e de segurança.</div>
+              </div>
+            </div>
+            <div class="card reveal">
+              <img src="fotos/confidencialidade.jpg" alt="Modelo 2" />
+              <div>
+                <h4>Confidencialidade</h4>
+                <div class="muted">Processos que preservam discrição e privacidade.</div>
+              </div>
+            </div>
+            <div class="card reveal">
+              <img src="fotos/atendimento_profissional.jpg" alt="Modelo 3" />
+              <div>
+                <h4>Atendimento profissional</h4>
+                <div class="muted">Suporte para agendamento e orientações.</div>
+              </div>
+            </div>
+            <div class="card reveal">
+              <img src="fotos/criterios_claros.jpg" alt="Modelo 4" />
+              <div>
+                <h4>Critérios claros</h4>
+                <div class="muted">Seleção com base em perfil profissional e presença.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="frame reveal">
+          <img src="fotos/imagem_12.jpg" style="width:100%;height:100%;display:block;object-fit:cover;min-height:360px" alt="Hero" />
+        </div>
+
+      </section>
+
+      <section id="galeria" class="reveal">
+        <h2 style="color: white;">Galeria</h2>
+        <div class="gallery">
+          <img src="fotos/imagem_1.jpeg" alt="Galeria 1" />
+          <img src="fotos/imagem_2.jpeg" alt="Galeria 2" />
+          <img src="fotos/imagem_3.jpeg" alt="Galeria 3" />
+          <img src="fotos/imagem_4.jpeg" alt="Galeria 4" />
+          <img src="fotos/imagem_5.jpeg" alt="Galeria 5" />
+          <img src="fotos/imagem_6.jpeg" alt="Galeria 6" />
+          <img src="fotos/imagem_7.jpeg" alt="Galeria 7" />
+          <img src="fotos/imagem_8.jpeg" alt="Galeria 8" />
+          <img src="fotos/imagem_9.jpeg" alt="Galeria 9" />
+          <img src="fotos/imagem_10.jpeg" alt="Galeria 10" />
+          <img src="fotos/imagem_11.jpeg" alt="Galeria 11" />
+          <img src="fotos/imagem_12.jpg" alt="Galeria 12" />
+        </div>
+      </section>
+
+      <section id="contato" style="margin-top:32px" class="reveal">
+        <h2>Como participar do grupo premium</h2>
+        <ol class="muted">
+          <li>Envie uma mensagem pelo WhatsApp informando interesse.</li>
+        </ol>
+
+        <p class="muted">Observação: este espaço é destinado a profissionais adultos. Não são permitidos anúncios ou conteúdos que contravenham leis locais.</p>
+
+        <div style="margin-top:16px">
+          <a class="cta-whatsapp" id="whatsappFooter" href="https://wa.me/5515974067557?text=Ol%C3%A1%2C%20gostaria%20de%20participar%20do%20grupo%20premium" target="_blank">📲 Entrar no Grupo Premium</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> AYModel • Todos os direitos reservados • Desenvolvido para uso profissional
+    </footer>
+  </div>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+<div class="floating-whatsapp">
+  <a href="https://wa.me/5515974067557?text=Ol%C3%A1%20gostaria%20de%20informa%C3%A7%C3%B5es" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+</div>
+
+<!-- HTML DO BOTÃO -->
+<div class="instagram-fixed">
+  <a href="https://www.instagram.com/aymodel_oficial/?igsh=NGRtamQxN2ZicmVh#"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Visite nosso Instagram">
+    <!-- Logo oficial do Instagram (SVG) -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <radialGradient id="a" cx="33%" cy="100%" r="110%">
+        <stop offset="0%" stop-color="#feda75"/>
+        <stop offset="25%" stop-color="#fa7e1e"/>
+        <stop offset="50%" stop-color="#d62976"/>
+        <stop offset="75%" stop-color="#962fbf"/>
+        <stop offset="100%" stop-color="#4f5bd5"/>
+      </radialGradient>
+      <path fill="url(#a)" d="M349.33 69.33A93.33 93.33 0 0 1 442.67 162v188a93.33 93.33 0 0 1-93.34 93.34h-188a93.33 93.33 0 0 1-93.33-93.34V162a93.33 93.33 0 0 1 93.33-92.67h188z"/>
+      <path fill="#fff" d="M256 164.1a91.9 91.9 0 1 0 91.9 91.9 91.9 91.9 0 0 0-91.9-91.9zm0 151.6a59.7 59.7 0 1 1 59.7-59.7 59.7 59.7 0 0 1-59.7 59.7zM377.6 148a21.3 21.3 0 1 0 21.3 21.3 21.3 21.3 0 0 0-21.3-21.3z"/>
+    </svg>
+  </a>
+</div>
+  
+  <script>
+    // small utilities: set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reveal on scroll (no libraries)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // gentle parallax for hero image
+    window.addEventListener('mousemove', (ev)=>{
+      const frame = document.querySelector('.frame');
+      if(!frame) return;
+      const x = (ev.clientX - window.innerWidth/2)/80;
+      const y = (ev.clientY - window.innerHeight/2)/120;
+      frame.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    // Accessibility: ensure whatsapp links open in new tab
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.setAttribute('rel','noopener noreferrer'));
+
+  </script>
+</body>
+</html>
+
+
